@@ -1,11 +1,16 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-function Root() {
+import { useRouter } from "../../hooks/useRouter";
+
+const Root = () => {
+  const { push } = useRouter();
+
   return (
     <div className="App">
-      <span>root</span>
+      <h1>root</h1>
+      <button onClick={() => push("/about")}>about</button>
     </div>
   );
-}
+};
 
 export default Root;
